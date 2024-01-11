@@ -14,28 +14,28 @@ if [ $(id -u) != 0 ]; then
   exit 1
 fi
 
-# DEFAULT_ORC8R_DOMAIN="magma.local"
-# DEFAULT_NMS_ORGANIZATION_NAME="magma-test"
-# DEFAULT_NMS_EMAIL_ID_AND_PASSWORD="admin"
-# ORC8R_IP=$(hostname -I | awk '{print $1}')
-# GITHUB_USERNAME="magma"
-# MAGMA_DOCKER_REGISTRY="magmacore"
-# MAGMA_ORC8R_REPO="magma-deployer"
-# MAGMA_USER="magma"
-# HOSTS_FILE="hosts.yml"
+DEFAULT_ORC8R_DOMAIN="magma.local"
+DEFAULT_NMS_ORGANIZATION_NAME="magma-test"
+DEFAULT_NMS_EMAIL_ID_AND_PASSWORD="admin"
+ORC8R_IP=$(hostname -I | awk '{print $1}')
+GITHUB_USERNAME="magma"
+MAGMA_DOCKER_REGISTRY="magmacore"
+MAGMA_ORC8R_REPO="magma-deployer"
+MAGMA_USER="magma"
+HOSTS_FILE="hosts.yml"
 
-# # Take input from user
-# read -p "Your Magma Orchestrator domain name? [${DEFAULT_ORC8R_DOMAIN}]: " ORC8R_DOMAIN
-# ORC8R_DOMAIN="${ORC8R_DOMAIN:-${DEFAULT_ORC8R_DOMAIN}}"
+# Take input from user
+read -p "Your Magma Orchestrator domain name? [${DEFAULT_ORC8R_DOMAIN}]: " ORC8R_DOMAIN
+ORC8R_DOMAIN="${ORC8R_DOMAIN:-${DEFAULT_ORC8R_DOMAIN}}"
 
-# read -p "NMS organization(subdomain) name you want? [${DEFAULT_NMS_ORGANIZATION_NAME}]: " NMS_ORGANIZATION_NAME
-# NMS_ORGANIZATION_NAME="${NMS_ORGANIZATION_NAME:-${DEFAULT_NMS_ORGANIZATION_NAME}}"
+read -p "NMS organization(subdomain) name you want? [${DEFAULT_NMS_ORGANIZATION_NAME}]: " NMS_ORGANIZATION_NAME
+NMS_ORGANIZATION_NAME="${NMS_ORGANIZATION_NAME:-${DEFAULT_NMS_ORGANIZATION_NAME}}"
 
-# read -p "Set your email ID for NMS? [${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}]: " NMS_EMAIL_ID
-# NMS_EMAIL_ID="${NMS_EMAIL_ID:-${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}}"
+read -p "Set your email ID for NMS? [${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}]: " NMS_EMAIL_ID
+NMS_EMAIL_ID="${NMS_EMAIL_ID:-${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}}"
 
-# read -p "Set your password for NMS? [${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}]: " NMS_PASSWORD
-# NMS_PASSWORD="${NMS_PASSWORD:-${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}}"
+read -p "Set your password for NMS? [${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}]: " NMS_PASSWORD
+NMS_PASSWORD="${NMS_PASSWORD:-${DEFAULT_NMS_EMAIL_ID_AND_PASSWORD}}"
 
 # Add repos for installing yq and ansible
 add-apt-repository --yes ppa:rmescandon/yq
